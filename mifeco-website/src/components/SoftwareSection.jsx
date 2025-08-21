@@ -31,8 +31,8 @@ const SoftwareSection = () => {
       id: 'researcher',
       name: 'Researcher',
       subtitle: 'AI-Powered Research Assistant',
-      price: '$299',
-      originalPrice: '$399',
+      price: 'Free for first 3 studies, $39/month after',
+      originalPrice: '$299',
       description: 'Revolutionary research assistant that accelerates discovery and analysis across multiple domains. Researcher combines advanced AI algorithms with comprehensive data mining capabilities to transform how you conduct research, analyze information, and generate insights.',
       longDescription: `Researcher is the ultimate AI-powered research assistant designed for academics, consultants, and professionals who need to process vast amounts of information quickly and accurately. Built on cutting-edge natural language processing and machine learning technologies, Researcher can analyze documents, extract key insights, identify patterns, and generate comprehensive research reports in minutes rather than hours.
 
@@ -71,14 +71,9 @@ Security and privacy are paramount in Researcher's design. All data is encrypted
       ],
       testimonials: [
         {
-          name: 'Dr. Sarah Chen',
-          title: 'Research Director, Columbia University',
+          name: 'James Burk',
+          title: 'Research Director, Mars Technology Institute',
           quote: 'Researcher has transformed our research capabilities. What used to take weeks now takes days, and the quality of insights has improved dramatically.'
-        },
-        {
-          name: 'Michael Rodriguez',
-          title: 'Senior Consultant, McKinsey & Company',
-          quote: 'The AI analysis features in Researcher have given us a significant competitive advantage in client engagements.'
         }
       ],
       icon: <Search className="w-8 h-8" />,
@@ -97,8 +92,8 @@ Security and privacy are paramount in Researcher's design. All data is encrypted
       id: 'hyperion',
       name: 'Hyperion',
       subtitle: 'Scientific Ideation & Research Platform',
-      price: '$499',
-      originalPrice: '$699',
+      price: 'Free for first 3 studies, $39/month after',
+      originalPrice: '$499',
       description: 'Advanced scientific ideation and research drafting platform that accelerates innovation and discovery. Hyperion combines AI-driven hypothesis generation with sophisticated experimental design tools to revolutionize scientific research and development.',
       longDescription: `Hyperion represents the next generation of scientific research tools, designed specifically for researchers, scientists, and R&D teams who need to accelerate innovation and discovery. This powerful platform combines artificial intelligence with deep scientific knowledge to generate novel hypotheses, design experiments, and draft research proposals that push the boundaries of scientific understanding.
 
@@ -166,8 +161,8 @@ Security and intellectual property protection are critical features of Hyperion.
       id: 'engineering_assistant',
       name: 'Engineering Assistant',
       subtitle: 'Advanced Engineering Development Tool',
-      price: '$399',
-      originalPrice: '$549',
+      price: 'Free for first 3 projects, $39/month after',
+      originalPrice: '$399',
       description: 'Comprehensive engineering development platform that streamlines design, development, and prototyping processes. Engineering Assistant combines CAD integration, simulation tools, and AI-powered optimization to accelerate engineering innovation.',
       longDescription: `Engineering Assistant is the ultimate engineering development platform designed for mechanical, electrical, and software engineers who need to accelerate product development and innovation. This comprehensive tool suite combines advanced CAD integration, simulation capabilities, and AI-powered optimization to streamline the entire engineering development lifecycle from concept to prototype.
 
@@ -208,18 +203,7 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
         'Consumer product development',
         'Industrial equipment and machinery design'
       ],
-      testimonials: [
-        {
-          name: 'Robert Johnson',
-          title: 'Lead Engineer, Boeing',
-          quote: 'Engineering Assistant has transformed our design process. The AI optimization features have led to 30% weight reduction in our latest aircraft components.'
-        },
-        {
-          name: 'Lisa Chen',
-          title: 'Product Development Manager, Tesla',
-          quote: 'The simulation capabilities in Engineering Assistant have reduced our prototyping costs by 60% while improving design quality.'
-        }
-      ],
+      testimonials: [],
       icon: <Wrench className="w-8 h-8" />,
       color: 'from-orange-500 to-orange-600',
       bgColor: 'bg-orange-50',
@@ -376,27 +360,6 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
                   <Card className="shadow-xl">
                     <CardHeader>
                       <CardTitle className="flex items-center space-x-2">
-                        <Star className="w-5 h-5 text-yellow-500" />
-                        <span>Customer Testimonials</span>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      {product.testimonials.map((testimonial, tIndex) => (
-                        <div key={tIndex} className="space-y-3">
-                          <p className="text-gray-700 italic">"{testimonial.quote}"</p>
-                          <div>
-                            <div className="font-semibold">{testimonial.name}</div>
-                            <div className="text-sm text-gray-600">{testimonial.title}</div>
-                          </div>
-                          {tIndex < product.testimonials.length - 1 && <hr className="border-gray-200" />}
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-
-                  <Card className="shadow-xl mt-6">
-                    <CardHeader>
-                      <CardTitle className="flex items-center space-x-2">
                         <TrendingUp className="w-5 h-5 text-blue-500" />
                         <span>Key Benefits</span>
                       </CardTitle>
@@ -429,9 +392,9 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2">$999</div>
-                <div className="text-xl text-purple-200 line-through mb-2">$1,647 Individual Price</div>
-                <Badge className="bg-yellow-500 text-yellow-900 text-lg px-4 py-2">Save $648 (39% Off)</Badge>
+                <div className="text-5xl font-bold mb-2">$99/month</div>
+                <div className="text-xl text-purple-200 line-through mb-2">$117/month Individual Price</div>
+                <Badge className="bg-yellow-500 text-yellow-900 text-lg px-4 py-2">Save $18/month (15% Off)</Badge>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -478,7 +441,7 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
           </div>
           <div className="space-y-2">
             <Users className="w-8 h-8 text-blue-600 mx-auto" />
-            <h3 className="font-semibold">10,000+ Users</h3>
+            <h3 className="font-semibold">Secure for Users</h3>
             <p className="text-gray-600 text-sm">Trusted by professionals worldwide</p>
           </div>
           <div className="space-y-2">
@@ -498,4 +461,3 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
 };
 
 export default SoftwareSection;
-

@@ -121,7 +121,7 @@ const IndustryPopup = ({ isOpen, onClose, industry }) => {
         { label: "Average Cost Reduction", value: "$3.8M" },
         { label: "Patient Satisfaction Increase", value: "52%" },
         { label: "Operational Efficiency Gain", value: "45%" },
-        { label: "Technology Implementation Success", value: "98%" }
+        { label: "Technology Implementation Success", value: "100%" }
       ],
 
       clients: [
@@ -245,12 +245,6 @@ const IndustryPopup = ({ isOpen, onClose, industry }) => {
         }
       ],
 
-      metrics: [
-        { label: "Mission Success Rate", value: "99.7%" },
-        { label: "Cost Reduction Achieved", value: "$2.3B" },
-        { label: "Patents Developed", value: "47" },
-        { label: "Industry Awards Won", value: "12" }
-      ],
 
       clients: [
         "Telephonics Corporation",
@@ -344,21 +338,6 @@ const IndustryPopup = ({ isOpen, onClose, industry }) => {
             </div>
           </div>
 
-          {/* Metrics */}
-          <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-              <TrendingUp className="w-6 h-6 mr-2 text-green-600" />
-              Proven Results
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {content.metrics.map((metric, index) => (
-                <div key={index} className="text-center bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">{metric.value}</div>
-                  <div className="text-sm text-gray-600">{metric.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Clients */}
           <div>
@@ -379,13 +358,9 @@ const IndustryPopup = ({ isOpen, onClose, industry }) => {
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white text-center">
             <h3 className="text-xl font-bold mb-2">Ready to Transform Your {content.title.split(' ')[0]} Organization?</h3>
             <p className="mb-4">Let MIFECO's award-winning expertise drive your success.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex justify-center">
               <button className="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Schedule Free Consultation
-              </button>
-              <button className="bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center">
-                <Download className="w-4 h-4 mr-2" />
-                Download Case Studies
               </button>
             </div>
           </div>
@@ -396,4 +371,3 @@ const IndustryPopup = ({ isOpen, onClose, industry }) => {
 };
 
 export default IndustryPopup;
-

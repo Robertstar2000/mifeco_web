@@ -20,7 +20,7 @@ import businessTeam from '../assets/business_consulting_team.jpg';
 import marsRover from '../assets/mars_rover_technology.jpg';
 import modernOffice from '../assets/modern_office_technology.jpg';
 
-const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, setIsCaseStudyModalOpen, onConsultationClick }) => {
+const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, onConsultationClick }) => {
   const industries = [
     {
       id: "education",
@@ -90,7 +90,7 @@ const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, setIsC
         "Regulatory Compliance Strategy",
         "Space Industry Market Analysis"
       ],
-      clients: ["Mars Technology Institute", "NASA Collaborations", "Telephonics Corporation", "Dunmore Corporation (Ronn Cort, President)", "Tallman Equipment (Charlie Vicari, CEO)", "Spartan Emergency Response", "National Pest Management", "Johnson Oil Company", "SpaceX Suppliers", "Blue Origin Partners", "Boeing Space Division"],
+      clients: ["Mars Technology Institute", "NASA Collaborations", "Telephonics Corporation", "Dunmore Corporation (Ronn Cort, President)", "Tallman Equipment (Charlie Vicari, CEO)", "Spartan Emergency Response"],
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
       featured: true
@@ -98,9 +98,9 @@ const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, setIsC
   ];
 
   const stats = [
-    { number: "50+", label: "Industry Clients", icon: <Building2 className="w-6 h-6" /> },
-    { number: "15+", label: "Years Experience", icon: <TrendingUp className="w-6 h-6" /> },
-    { number: "98%", label: "Success Rate", icon: <CheckCircle className="w-6 h-6" /> },
+    { number: "25+", label: "Industry Clients", icon: <Building2 className="w-6 h-6" /> },
+    { number: "30+", label: "Years Experience", icon: <TrendingUp className="w-6 h-6" /> },
+    { number: "100%", label: "Success Rate", icon: <CheckCircle className="w-6 h-6" /> },
     { number: "4", label: "Key Industries", icon: <Users className="w-6 h-6" /> }
   ];
 
@@ -218,12 +218,9 @@ const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, setIsC
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button size="lg" className="btn-gradient text-white" onClick={onConsultationClick}>
                   Schedule Industry Consultation
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => setIsCaseStudyModalOpen(true)}>
-                  Download Industry Case Studies
                 </Button>
               </div>
               <p className="text-sm text-gray-600">
@@ -238,4 +235,3 @@ const IndustriesSection = ({ setSelectedIndustry, setIsIndustryPopupOpen, setIsC
 };
 
 export default IndustriesSection;
-

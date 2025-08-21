@@ -23,12 +23,15 @@ const PricingSection = ({ onConsultationClick }) => {
         "Resource recommendations"
       ],
       popular: false,
-      stripeProductId: "price_consultation"
+      stripeProductId: "price_consultation",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
+      icon: <Users className="w-6 h-6" />
     },
     {
       name: "Strategic Planning",
-      price: "$2,500",
-      period: "per project",
+      price: "$17,500",
+      period: "per project plus expenses",
       description: "Comprehensive strategic planning and roadmap development",
       features: [
         "Complete business analysis",
@@ -40,12 +43,15 @@ const PricingSection = ({ onConsultationClick }) => {
         "Team training session"
       ],
       popular: true,
-      stripeProductId: "price_strategic_planning"
+      stripeProductId: "price_strategic_planning",
+      color: "from-purple-500 to-pink-500",
+      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
+      icon: <TrendingUp className="w-6 h-6" />
     },
     {
       name: "Digital Transformation",
-      price: "$5,000",
-      period: "per project",
+      price: "Quotes Available",
+      period: "",
       description: "End-to-end digital transformation consulting",
       features: [
         "Technology assessment",
@@ -58,7 +64,10 @@ const PricingSection = ({ onConsultationClick }) => {
         "Performance metrics setup"
       ],
       popular: false,
-      stripeProductId: "price_digital_transformation"
+      stripeProductId: "price_digital_transformation",
+      color: "from-emerald-500 to-teal-500",
+      bgColor: "bg-gradient-to-br from-emerald-50 to-teal-50",
+      icon: <Zap className="w-6 h-6" />
     }
   ];
 
@@ -113,63 +122,72 @@ const PricingSection = ({ onConsultationClick }) => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <Card
-              key={index}
-              className={`relative card-hover ${
-                plan.popular 
-                  ? 'border-2 border-blue-500 shadow-xl scale-105' 
-                  : 'border shadow-lg'
-              }`}
-            >
+            <div key={index} className={`relative ${plan.bgColor} rounded-3xl p-8 card-hover ${
+              plan.popular ? 'scale-105 shadow-2xl' : 'shadow-xl'
+            }`}>
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-blue-500 text-white px-4 py-1">
-                    <Star className="w-4 h-4 mr-1" />
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-2 text-lg shadow-lg">
+                    <Star className="w-5 h-5 mr-2 fill-current" />
                     Most Popular
                   </Badge>
                 </div>
               )}
               
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-blue-600">{plan.price}</span>
-                  <span className="text-gray-600 ml-2">{plan.period}</span>
-                </div>
-                <CardDescription className="text-base">
-                  {plan.description}
-                </CardDescription>
-              </CardHeader>
+              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
+                <CardHeader className="text-center pb-6">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${plan.color} flex items-center justify-center text-white shadow-lg`}>
+                    {plan.icon}
+                  </div>
+                  <CardTitle className="text-2xl mb-3 font-bold">{plan.name}</CardTitle>
+                  <div className="mb-4">
+                    <span className={`text-5xl font-bold bg-gradient-to-r ${plan.color} bg-clip-text text-transparent`}>
+                      {plan.price}
+                    </span>
+                    {plan.period && (
+                      <span className="text-gray-600 ml-2 text-lg">{plan.period}</span>
+                    )}
+                  </div>
+                  <CardDescription className="text-base text-gray-700 font-medium">
+                    {plan.description}
+                  </CardDescription>
+                </CardHeader>
 
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3">
-                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <CardContent className="space-y-6">
+                  <ul className="space-y-4">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start space-x-3">
+                        <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${plan.color} flex items-center justify-center flex-shrink-0 mt-0.5`}>
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <Button
-                  className={`w-full ${
-                    plan.popular 
-                      ? 'btn-gradient text-white' 
-                      : 'border-2 border-blue-500 text-blue-600 hover:bg-blue-50'
-                  }`}
-                  onClick={() => handlePayment(plan.stripeProductId, plan.name, plan.price)}
-                >
-                  {plan.popular ? (
-                    <>
-                      <Zap className="w-4 h-4 mr-2" />
-                      Get Started Now
-                    </>
-                  ) : (
-                    'Choose Plan'
-                  )}
-                </Button>
-              </CardContent>
-            </Card>
+                  <Button
+                    className={`w-full py-4 text-lg font-semibold shadow-lg ${
+                      plan.popular 
+                        ? `bg-gradient-to-r ${plan.color} text-white hover:shadow-xl transform hover:scale-105 transition-all duration-300` 
+                        : `border-2 bg-gradient-to-r ${plan.color} bg-clip-text text-transparent border-current hover:bg-gradient-to-r hover:${plan.color} hover:text-white transition-all duration-300`
+                    }`}
+                    onClick={() => handlePayment(plan.stripeProductId, plan.name, plan.price)}
+                  >
+                    {plan.popular ? (
+                      <>
+                        <Zap className="w-5 h-5 mr-2" />
+                        Get Started Now
+                      </>
+                    ) : (
+                      <>
+                        {plan.icon}
+                        <span className="ml-2">Choose Plan</span>
+                      </>
+                    )}
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
@@ -187,12 +205,12 @@ const PricingSection = ({ onConsultationClick }) => {
           <div className="space-y-2">
             <TrendingUp className="w-8 h-8 text-blue-600 mx-auto" />
             <h3 className="font-semibold">Proven Results</h3>
-            <p className="text-gray-600 text-sm">98% client satisfaction rate with measurable ROI</p>
+            <p className="text-gray-600 text-sm">100% client satisfaction rate with measurable ROI</p>
           </div>
           <div className="space-y-2">
             <Users className="w-8 h-8 text-purple-600 mx-auto" />
             <h3 className="font-semibold">Expert Team</h3>
-            <p className="text-gray-600 text-sm">15+ years of combined consulting experience</p>
+            <p className="text-gray-600 text-sm">30+ years of experience</p>
           </div>
           <div className="space-y-2">
             <Zap className="w-8 h-8 text-pink-600 mx-auto" />
@@ -206,4 +224,3 @@ const PricingSection = ({ onConsultationClick }) => {
 };
 
 export default PricingSection;
-

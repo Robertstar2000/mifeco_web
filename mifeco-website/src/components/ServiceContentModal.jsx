@@ -110,7 +110,7 @@ const ServiceContentModal = ({ isOpen, onClose, serviceType }) => {
       caseStudy: {
         client: 'Regional Medical Center',
         challenge: 'Declining staff morale and inefficient team workflows',
-        result: 'Improved staff efficiency by 42% and achieved 98% patient satisfaction rating'
+        result: 'Improved staff efficiency by 42% and achieved 100% patient satisfaction rating'
       }
     }
   };
@@ -220,4 +220,3 @@ const ServiceContentModal = ({ isOpen, onClose, serviceType }) => {
 };
 
 export default ServiceContentModal;
-
