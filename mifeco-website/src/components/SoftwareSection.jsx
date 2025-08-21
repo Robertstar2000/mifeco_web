@@ -248,7 +248,7 @@ Quality assurance and compliance are built into Engineering Assistant's core fun
       console.error('Purchase error:', error);
       // For demo purposes, simulate successful purchase
       setPurchasedSoftware(prev => new Set([...prev, productId]));
-      alert(`Purchase successful! You can now download ${productId}.`);
+      alert("Purchased software coming soon.");
     }
   };
 
